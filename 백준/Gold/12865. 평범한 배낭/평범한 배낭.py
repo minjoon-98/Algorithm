@@ -1,8 +1,8 @@
 import sys
 
 # 입력 받기
-N, K = map(int, input().split())
-stuff = [tuple(map(int, input().split())) for _ in range(N)]
+N, K = map(int, sys.stdin.readline().split())
+stuff = [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)]
 
 # 1차원 배열로 초기화
 knapsack = [0] * (K + 1)
