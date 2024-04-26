@@ -6,8 +6,8 @@ cables = []
 for _ in range(K):
     cables.append(int(sys.stdin.readline()))
 
-start = 0
-end = (sum(cables) // N)+1
+start = 1
+end = (sum(cables) // N) 
 
 while start <= end:
     count = 0
