@@ -3,11 +3,11 @@ input = sys.stdin.readline
 
 N = int(input())
 
-dp = [0] * (N+1)
-dp[1] = 1
+dp = [i for i in range(N + 1)]
+
 for i in range(2, N+1):
-    min_count = i
-    for j in range(1, int(i**(1/2))+1):
-        min_count = min(min_count, dp[i - j**2] + 1)
-        dp[i] = min_count
+    for j in range(int(i**(1/2)), 0, -1):
+        if dp[i] > dp[i - j**2] + 1:
+            dp[i] = dp[i - j**2] + 1
+
 print(dp[N])
