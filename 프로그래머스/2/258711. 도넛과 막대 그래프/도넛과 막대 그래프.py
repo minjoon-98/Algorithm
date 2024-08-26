@@ -18,14 +18,13 @@ def solution(edges):
     # 모든 노드를 순회하며 그래프 유형을 판별
     for node in range(1, max_node + 1):
         if out_degree[node] >= 2 and in_degree[node] == 0:
-            generated_node = node
+            generated_node = node   # 생성된 노드 조건: 진출차수는 2개 이상, 진입차수는 0
         elif out_degree[node] == 0 and in_degree[node] > 0:
-            bar_count += 1
+            bar_count += 1  # 막대기형의 끝 노드 조건: 진출차수는 0, 진입차수는 1 이상
         elif out_degree[node] >= 2 and in_degree[node] >= 2:
-            eight_count += 1
+            eight_count += 1    # 8자형의 중간 노드 조건: 진출차수와 진입차수가 모두 2개 이상
 
-    # 도넛 모양 그래프의 수는 생성된 노드에서 나가는 간선의 개수에서 
-    # bar_count와 eight_count를 뺀 값
+    # 도넛 모양 그래프의 수는 생성된 노드에서 나가는 간선의 개수(총 그래프의 개수)에서 bar_count와 eight_count를 뺀 값
     donut_count = out_degree[generated_node] - bar_count - eight_count
 
     return [generated_node, donut_count, bar_count, eight_count]
