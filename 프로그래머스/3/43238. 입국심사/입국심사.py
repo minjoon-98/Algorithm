@@ -12,8 +12,8 @@ def solution(n, times):
         
         if passed_people >= n:
             high = mid - 1  # 충분히 심사할 수 있으면, 최소 시간을 찾기 위해 high를 감소
+            answer = mid
         else:
             low = mid + 1   # 심사할 수 없으면, 시간을 늘리기 위해 low를 증가
             
-    answer = low
     return answer
