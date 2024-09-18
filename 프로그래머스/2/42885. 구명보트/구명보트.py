@@ -7,7 +7,7 @@ def solution(people, limit):
     right = len(people) - 1  # 가장 무거운 사람의 포인터
     answer = 0
     
-    # 투 포인터? 이분 탐색?
+    # 투 포인터
     while left <= right:
         if people[left] + people[right] <= limit:
             # 두 사람이 함께 보트를 탈 수 있습니다
