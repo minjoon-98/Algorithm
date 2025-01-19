@@ -31,7 +31,8 @@ public class Solution {
             }
 
             int maxChunks = 0;
-
+            
+            // 날짜를 기준으로 치즈 맛의 정도가 day 이하인 칸을 제외하고 DFS로 덩어리를 탐색
             for (int day = 0; day <= maxTaste; day++) {
                 visited = new boolean[N][N];
                 int chunks = 0;
@@ -39,12 +40,13 @@ public class Solution {
                 for (int i = 0; i < N; i++) {
                     for (int j = 0; j < N; j++) {
                         if (!visited[i][j] && cheese[i][j] > day) {
-                            bfs(i, j, day);
+                            dfs(i, j, day);
                             chunks++;
                         }
                     }
                 }
 
+                // maxChunks를 사용해 날짜별 덩어리 개수의 최대값을 갱신
                 maxChunks = Math.max(maxChunks, chunks);
             }
 
@@ -55,25 +57,16 @@ public class Solution {
         br.close();
     }
 
-    private static void bfs(int x, int y, int day) {
-        Queue<int[]> queue = new LinkedList<>();
-        queue.offer(new int[]{x, y});
+    private static void dfs(int x, int y, int day) {
         visited[x][y] = true;
 
-        while (!queue.isEmpty()) {
-            int[] current = queue.poll();
-            int cx = current[0];
-            int cy = current[1];
+        for (int d = 0; d < 4; d++) {
+            int nx = x + dx[d];
+            int ny = y + dy[d];
 
-            for (int d = 0; d < 4; d++) {
-                int nx = cx + dx[d];
-                int ny = cy + dy[d];
-
-                if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
-                    if (!visited[nx][ny] && cheese[nx][ny] > day) {
-                        queue.offer(new int[]{nx, ny});
-                        visited[nx][ny] = true;
-                    }
+            if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
+                if (!visited[nx][ny] && cheese[nx][ny] > day) {
+                    dfs(nx, ny, day);
                 }
             }
         }
