@@ -27,7 +27,6 @@ class Solution {
 				}
 			}
 		}
-		
 		return count;
 	}
 	
@@ -38,8 +37,8 @@ class Solution {
 		
 		int T = Integer.parseInt(br.readLine());
 		for (int tc = 1; tc <= T; tc++) {
-			int N = Integer.parseInt(br.readLine());
-			int M = Integer.parseInt(br.readLine());
+			int N = Integer.parseInt(br.readLine());	// 학생 수
+			int M = Integer.parseInt(br.readLine());	// 비교 횟수
 			
 			graph = new ArrayList<>();
 			graphR = new ArrayList<>();
@@ -54,15 +53,15 @@ class Solution {
 				int a = Integer.parseInt(st.nextToken());
 				int b = Integer.parseInt(st.nextToken());
 				
-				graph.get(a).add(b);
-				graphR.get(b).add(a);
+				graph.get(a).add(b); // 순방향 그래프 (a가 b보다 작음)
+	            graphR.get(b).add(a); // 역방향 그래프 (b보다 작은 애들을 저장)
 
 			}
 			
 			int answer = 0;
 			for (int i = 1; i <= N; i++) {
-				int count = bfs(i, N, graph) + bfs(i, N, graphR);
-				if (count == N-1) {
+				int count = bfs(i, N, graph) + bfs(i, N, graphR);	// 나보다 작은 애들 + 나보다 큰 애들
+				if (count == N-1) {	// 내 순서가 확정되었을 때
 					answer++;
 				}
 			}
