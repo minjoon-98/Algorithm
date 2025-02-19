@@ -1,3 +1,5 @@
+//package a0219.camp;
+
 import java.util.*;
 import java.io.*;
 
@@ -9,7 +11,7 @@ public class Solution {
 	
 	static int[] dest = new int[2];
 	
-	static int map[][] = new int[100][100];
+	static byte[][] map = new byte[100][100];
 	static boolean[][] visited;
 
 	static int ladder(int r, int c) {
@@ -57,7 +59,7 @@ public class Solution {
 			for (int i = 0; i < 100; i++) {
 				StringTokenizer st = new StringTokenizer(br.readLine());
 				for (int j = 0; j < 100; j++) {
-					map[i][j] = Integer.parseInt(st.nextToken());
+					map[i][j] = Byte.parseByte(st.nextToken());
 					if (i == 99 && map[i][j] ==2) {
 						dest[0] = i;
 						dest[1] = j;
