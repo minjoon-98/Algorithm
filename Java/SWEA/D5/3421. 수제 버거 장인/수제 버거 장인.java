@@ -1,3 +1,5 @@
+//package a0221.homework;
+
 import java.io.*;
 import java.util.*;
 
@@ -24,14 +26,21 @@ public class Solution {
 			}
 		}
 		
-		if (isConst) {
-			subSet(idx+1, selected);
-		} else {
+//		if (isConst) {
+//			subSet(idx+1, selected);
+//		} else {
+//			selected.add(idx);
+//			subSet(idx+1, selected);
+//			selected.remove(selected.size() - 1);
+//			subSet(idx+1, selected);
+//		}
+		
+		if (!isConst) {
 			selected.add(idx);
 			subSet(idx+1, selected);
 			selected.remove(selected.size() - 1);
-			subSet(idx+1, selected);
 		}
+		subSet(idx+1, selected);
 		
 		
 		
