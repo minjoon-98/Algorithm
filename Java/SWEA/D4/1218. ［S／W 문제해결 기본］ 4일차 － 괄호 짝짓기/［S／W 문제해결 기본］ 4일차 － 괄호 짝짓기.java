@@ -1,3 +1,5 @@
+//package a0220.homework;
+
 import java.io.*;
 import java.util.*;
 
@@ -16,7 +18,8 @@ public class Solution {
 //			StringTokenizer st = new StringTokenizer(br.readLine(), "");
 			String brackets = br.readLine();
 			
-			ArrayList<Character> stack = new ArrayList<>();
+//			ArrayList<Character> stack = new ArrayList<>();
+			ArrayDeque<Character> stack = new ArrayDeque<>();
 			
 			// 1: 유효함	0: 유효하지 않음
 			byte isValid = -1;
@@ -25,46 +28,46 @@ public class Solution {
 //				char input = st.nextToken().charAt(0);
 				char input = brackets.charAt(i);
 				if (stack.isEmpty()) {					
-					stack.add(input);
+					stack.push(input);
 				} else {
 					int lastIdx = stack.size() - 1;
-					char peek = stack.get(lastIdx);
-//					char peek = stack.getLast();
+//					char peek = stack.get(lastIdx);
+					char peek = stack.peek();
 					switch (input) {
 					case ')':
 						if (peek == '(') {
-							stack.remove(lastIdx);
-//							stack.removeLast();
+//							stack.remove(lastIdx);
+							stack.pop();
 						} else {
 							isValid = 0;
 						}
 						break;
 					case ']':
 						if (peek == '[') {
-							stack.remove(lastIdx);
-//							stack.removeLast();
+//							stack.remove(lastIdx);
+							stack.pop();
 						} else {
 							isValid = 0;
 						}
 						break;
 					case '}':
 						if (peek == '{') {
-							stack.remove(lastIdx);
-//							stack.removeLast();
+//							stack.remove(lastIdx);
+							stack.pop();
 						} else {
 							isValid = 0;
 						}
 						break;
 					case '>':
 						if (peek == '<') {
-							stack.remove(lastIdx);
-//							stack.removeLast();
+//							stack.remove(lastIdx);
+							stack.pop();
 						} else {
 							isValid = 0;
 						}
 						break;
 					default:
-						stack.add(input);
+						stack.push(input);
 						break;
 					}
 				}
