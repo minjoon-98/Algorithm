@@ -1,5 +1,3 @@
-//package a0225.homework;
-
 import java.io.*;
 import java.util.*;
 
@@ -26,14 +24,8 @@ public class Solution {
 	   while (isSelected[i-1] >= isSelected[j]) j--;
 	   swap(i-1, j);
 	   
-//	   int k = N-1;
-//	   swap(i, k);
-	   int left = i, right = N - 1;
-	    while (left < right) {
-	        swap(left, right);
-	        left++;
-	        right--;
-	    }
+	   int k = N-1;
+	   while (i<k) swap(i++, k--);
 	   return true;
    }
     
