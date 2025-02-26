@@ -1,5 +1,5 @@
 /// BufferedReader 사용하면 RunTime Error 발생!!!
-/// Scanner 사용해야함..!
+/// StreamTokenizer 사용한 버전... Scanner가 더 쉬운거 같다...
 
 //package a0226.homework;
 
@@ -9,22 +9,26 @@ import java.util.*;
 public class Solution {
 	
 	public static void main(String[] args) throws Exception {
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		Scanner sc = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		Scanner sc = new Scanner(System.in);
+		StreamTokenizer st = new StreamTokenizer(br);
 		StringBuilder sb = new StringBuilder();
 		
+		st.nextToken();
 //		int T = Integer.parseInt(br.readLine());
-		int T = sc.nextInt();
+		int T = (int) st.nval;
 				
 		for (int tc = 1; tc <= T; tc++) {
+			st.nextToken();
 //			int N = Integer.parseInt(br.readLine());
-			int N = sc.nextInt();
+			int N = (int) st.nval;
 			int[] heights = new int[N];
 
 //			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			for (int i = 0; i < N; i++) {
+				st.nextToken();
 //				heights[i] = Integer.parseInt(temp[i]);
-				heights[i] = sc.nextInt();
+				heights[i] = (int) st.nval;
 			}
 			
             int answer = 0;
@@ -49,8 +53,62 @@ public class Solution {
 
 		System.out.println(sb.toString());
 	}
-
 }
+
+
+///// BufferedReader 사용하면 RunTime Error 발생!!!
+///// Scanner 사용해야함..!
+//
+//package a0226.homework;
+//
+//import java.io.*;
+//import java.util.*;
+//
+//public class Solution_d4_4796_의석이의우뚝선산_서울_14반_김민준 {
+//	
+//	public static void main(String[] args) throws Exception {
+////		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		Scanner sc = new Scanner(System.in);
+//		StringBuilder sb = new StringBuilder();
+//		
+////		int T = Integer.parseInt(br.readLine());
+//		int T = sc.nextInt();
+//				
+//		for (int tc = 1; tc <= T; tc++) {
+////			int N = Integer.parseInt(br.readLine());
+//			int N = sc.nextInt();
+//			int[] heights = new int[N];
+//
+////			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//			for (int i = 0; i < N; i++) {
+////				heights[i] = Integer.parseInt(temp[i]);
+//				heights[i] = sc.nextInt();
+//			}
+//			
+//            int answer = 0;
+//            int increaseCount = 0, decreaseCount = 0;
+//            for (int i = 1; i < N; i++) {
+//                if (heights[i - 1] < heights[i]) {	// 증가 구간
+//                	if (decreaseCount > 0) {	// 만약 우뚝 선 산이 존재했다면
+//                		increaseCount = 0;	// 카운팅을 초기화
+//                	}
+//                    increaseCount++;
+//                    decreaseCount = 0;
+//                } else {	// 감소 구간
+//                    decreaseCount++;
+//                    if (increaseCount > 0) {
+//                        answer += increaseCount;
+//                    }
+//                }
+//            }
+//
+//			sb.append("#").append(tc).append(" ").append(answer).append("\n");
+//		}
+//
+//		System.out.println(sb.toString());
+//	}
+//
+//}
 
 //package a0226.homework;
 //
