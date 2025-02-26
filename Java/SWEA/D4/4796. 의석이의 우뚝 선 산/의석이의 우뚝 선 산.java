@@ -9,25 +9,26 @@ import java.util.*;
 public class Solution {
 	
 	public static void main(String[] args) throws Exception {
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 10240);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //		Scanner sc = new Scanner(System.in);
 		StreamTokenizer st = new StreamTokenizer(br);
 		StringBuilder sb = new StringBuilder();
 		
-		st.nextToken();
 //		int T = Integer.parseInt(br.readLine());
+		st.nextToken();
 		int T = (int) st.nval;
 				
 		for (int tc = 1; tc <= T; tc++) {
-			st.nextToken();
 //			int N = Integer.parseInt(br.readLine());
+			st.nextToken();
 			int N = (int) st.nval;
 			int[] heights = new int[N];
 
 //			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			for (int i = 0; i < N; i++) {
+//				heights[i] = Integer.parseInt(st.nextToken());
 				st.nextToken();
-//				heights[i] = Integer.parseInt(temp[i]);
 				heights[i] = (int) st.nval;
 			}
 			
@@ -81,7 +82,7 @@ public class Solution {
 //
 ////			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 //			for (int i = 0; i < N; i++) {
-////				heights[i] = Integer.parseInt(temp[i]);
+////				heights[i] = Integer.parseInt(st.nextToken());
 //				heights[i] = sc.nextInt();
 //			}
 //			
@@ -132,7 +133,7 @@ public class Solution {
 //
 ////			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 //			for (int i = 0; i < N; i++) {
-////				heights[i] = Integer.parseInt(temp[i]);
+////				heights[i] = Integer.parseInt(st.nextToken());
 //				heights[i] = sc.nextInt();
 //			}
 //			
@@ -207,7 +208,7 @@ public class Solution {
 //
 ////			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 //			for (int i = 0; i < N; i++) {
-////				heights[i] = Integer.parseInt(temp[i]);
+////				heights[i] = Integer.parseInt(st.nextToken());
 //				heights[i] = sc.nextInt();
 //			}
 //			int answer = 0;
