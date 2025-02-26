@@ -10,7 +10,7 @@ public class Solution {
 		StringBuilder sb = new StringBuilder();
 		
 		int T = Integer.parseInt(br.readLine());
-				
+		
 		for (int tc = 1; tc <= T; tc++) {
 			
 			int N = Integer.parseInt(br.readLine());
@@ -24,15 +24,16 @@ public class Solution {
 				for (int j = 0; j < N; j++) {
 //					map[i][j] = Character.getNumericValue(temp.charAt(j));
 					if (Math.abs(center-i) + Math.abs(center-j) <= center) {
-						answer += Character.getNumericValue(temp.charAt(j));
+//						answer += Character.getNumericValue(temp.charAt(j));
+						answer += temp.charAt(j) - '0';
 					}
 				}
 			}
 			
 			sb.append("#").append(tc).append(" ").append(answer).append("\n");
 		}
-
+		
 		System.out.println(sb.toString());
 	}
-
+	
 }
