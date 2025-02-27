@@ -1,4 +1,4 @@
-//package a0226.homework;
+//package a0227.homework;
 
 import java.io.*;
 import java.util.*;
@@ -73,7 +73,7 @@ public class Solution {
 }
 
 ///// 오답
-///// 답이 같은 경우 더 작은 값을 출력하는 조건 미충족
+///// 답이 같은 경우 더 작은 값을 출력하는 조건 미충
 ///// 채점용 input 파일로 채점한 결과 fail 입니다.
 ///// (오답 : 27개의 테스트케이스 중 11개가 맞았습니다.)
 //package a0226.homework;
@@ -81,7 +81,7 @@ public class Solution {
 //import java.io.*;
 //import java.util.*;
 //
-//public class Solution_d3_2805_농작물수확하기_서울_14반_김민준 {
+//public class Solution_d4_1861_정사각형방_서울_14반_김민준 {
 //
 //	static int N, M;
 //	static int[] dx = {-1, 1, 0, 0}, dy = {0, 0, -1, 1};
