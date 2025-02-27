@@ -9,20 +9,20 @@ public class Solution {
 	static int[] monthlyPlan;	// 월별 이용 계획
 	static int answer;
 	
-	static void backtracking(int month, int cost) {
+	static void dfs(int month, int cost) {
 		if (month > 11) {
 			answer = Math.min(answer, cost);
 			return;
 		}
 		
 		// 3달 이용권 사용
-		backtracking(month + 3, cost + passPrice[2]);
+		dfs(month + 3, cost + passPrice[2]);
 		
 		// 1달 이용권 사용
-		backtracking(month + 1, cost + passPrice[1]);
+		dfs(month + 1, cost + passPrice[1]);
 				
 		// 1일 이용권 사용
-		backtracking(month + 1, cost + passPrice[0] * monthlyPlan[month]);
+		dfs(month + 1, cost + passPrice[0] * monthlyPlan[month]);
 		
 	}
 	
@@ -48,7 +48,7 @@ public class Solution {
 			
 			answer = passPrice[3];	// 1년 이용권 요금을 기본으로 잡고 시작
 			
-			backtracking(0, 0);
+			dfs(0, 0);
 			
 			sb.append("#").append(tc).append(" ").append(answer).append("\n");
 		}
