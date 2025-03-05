@@ -18,11 +18,13 @@ public class Main {
 		}
 		
 		boolean uncleaned = false;
+        // 현재 칸의 주변 4칸 중 청소되지 않은 빈 칸이 있는지 확인
 		for (int i = 0; i < 4; i++) {
 			int nx = r + dx[i], ny = c + dy[i];
 			if (nx>=0 && nx<N && ny>=0 && ny<M) {
 				if (map[nx][ny] == 0) {
 					uncleaned = true;
+                    break;
 				}
 			}
 		}
