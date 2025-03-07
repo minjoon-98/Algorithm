@@ -1,5 +1,3 @@
-//package a0306.homework;
-
 import java.io.*;
 import java.util.*;
 
