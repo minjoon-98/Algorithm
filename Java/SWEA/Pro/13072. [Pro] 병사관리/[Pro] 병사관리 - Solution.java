@@ -82,7 +82,7 @@ class Solution
 	{
 		int TC, MARK;
 	
-		System.setIn(new java.io.FileInputStream("res/soldierManage_input.txt"));
+//		System.setIn(new java.io.FileInputStream("res/13072_input.txt"));
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
