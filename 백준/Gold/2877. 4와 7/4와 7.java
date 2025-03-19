@@ -8,11 +8,6 @@ public class Main {
     static int a, b;
     static String A, B;
     
-    // a와 b 중 하나가 0인 경우, 0은 앞에 올 수 없으므로
-    // 1자리에서는 비0인 숫자(B)만 나오고,
-    // 2자리 이상부터는 맨 앞 자리는 B, 나머지는 재귀적으로 결정합니다.
-    // curr: 현재 그룹 내 1-indexed 순서, 
-    // pow2: 현재 그룹의 경우의 수 (2^(n-1), n>=2)
     static String ascZero(int curr, int pow2) {
         if (pow2 == 2) {
             if (curr == 1) {
@@ -28,10 +23,6 @@ public class Main {
         }
     }
     
-    // 두 숫자가 모두 0가 아닐 경우
-    // 1자리부터 n자리까지 모두 사용 가능하며, 각 자리마다 A(작은 수)와 B(큰 수)를 재귀적으로 결정
-    // curr: 현재 그룹 내 1-indexed 순서,
-    // pow2: 현재 그룹의 경우의 수 (2^n, n자리일 때)
     static String ascNonZero(int curr, int pow2) {
         if (pow2 == 2) {
             if (curr == 1) {
@@ -64,7 +55,7 @@ public class Main {
         boolean isZero = (a == 0 || b == 0);
 
         int curr = K;
-        int pow2 = 2; // 1자리 그룹의 경우의 수는 2 (즉, 2개의 숫자), 0// 1자리 그룹(크기 1)을 제외하고 K를 보정
+        int pow2 = 2; // !isZero이면 1자리 그룹의 경우의 수는 2 (즉, 2개의 숫자)
         while (curr - pow2 > 0) {
             curr -= pow2;
             pow2 *= 2;
@@ -76,7 +67,7 @@ public class Main {
                 answer = B;
             } else {
                 // 결과: 맨 앞자리는 항상 B, 나머지 자릿수는 ascZero로 결정
-                answer = B + ascZero(curr - 1, pow2);
+                answer = B + ascZero(curr - 1, pow2); // isZero이면 1자리 그룹의 경우의 수는 1(0을 제외한 수) 따라서 1을 빼줘야함
             }
         } else {
             answer = ascNonZero(curr, pow2);
@@ -87,13 +78,14 @@ public class Main {
 }
 
 
-/// GPT가 알려준 코드...
-/// 
+// /// GPT가 알려준 코드...
+
 // import java.io.*;
 // import java.util.*;
 
 // public class Main {
 //     public static void main(String[] args) throws Exception {
+
 //         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
 //         // 첫 번째 줄에서 두 정수 a와 b를 입력받음 (공백으로 구분)
