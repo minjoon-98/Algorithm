@@ -68,9 +68,9 @@ public class Solution {
 //		if (idx >= N) return;
 //		
 //		for (int i = idx; i < N; i++) {
-//			selected.add(Integer.valueOf(i));
+//			selected.add(Integer.valueOf(i));	// add는 그냥 i로 해도 무관
 //			comb(idx+1, cnt+1, selected);
-//			selected.remove(Integer.valueOf(i));
+//			selected.remove(Integer.valueOf(i));	// 그냥 i로 하면 index로 취급해서 해당 위치를 참조함
 //			comb(idx+1, cnt, selected);
 //		}
 //	}
