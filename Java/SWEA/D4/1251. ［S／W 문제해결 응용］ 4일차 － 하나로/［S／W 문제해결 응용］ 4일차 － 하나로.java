@@ -59,7 +59,7 @@ public class Solution {
 //		if (cnt == 2) {
 //			int from = selected.get(0);
 //			int to = selected.get(1);
-//			double weight = Math.hypot(islands[from][0] - islands[to][0], islands[from][1] - islands[to][1]) * E;
+//			double weight = Math.pow(Math.hypot(islands[i][0] - islands[j][0], islands[i][1] - islands[j][1]), 2) * E;
 //			Edge edge = new Edge(from, to, weight);
 //			edgeList.add(edge);
 //			return;
@@ -100,7 +100,7 @@ public class Solution {
 			// 간선 리스트 생성 (모든 섬 간의 간선 생성)
             for (int i = 0; i < N; i++) {
                 for (int j = i + 1; j < N; j++) {
-                    double weight = Math.pow(Math.hypot(islands[i][0] - islands[j][0], islands[i][1] - islands[j][1]), 2) * E;
+                    double weight = (Math.pow(islands[i][0] - islands[j][0], 2) + Math.pow(islands[i][1] - islands[j][1], 2)) * E;
                     edgeList.add(new Edge(i, j, weight));
                 }
             }
