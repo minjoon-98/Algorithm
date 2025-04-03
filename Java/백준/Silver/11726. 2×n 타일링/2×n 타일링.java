@@ -1,3 +1,6 @@
+/// int 오버 플로우 방지! 모듈러 연산을 계속 해주자!
+//package a0403.homework;
+
 import java.io.*;
 import java.util.*;
 
@@ -28,7 +31,7 @@ public class Main {
 }
 
 
-///// 오답!!! (왜 틀림??!)
+///// 오답!!! (int 오버플로우 발생 가능!)
 //package a0403.homework;
 //
 //import java.io.*;
@@ -53,7 +56,7 @@ public class Main {
 //		dp[2] = 2;
 //		
 //		for (int i = 3; i <= n; i++) {
-//			dp[i] = dp[i-1] + dp[i-2];
+//			dp[i] = dp[i-1] + dp[i-2]; // ← 여기서 int 오버플로우 발생 가능
 //		}
 //		
 //		System.out.println(dp[n]%10007);
