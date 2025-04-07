@@ -51,7 +51,7 @@ public class Solution {
 //import java.io.*;
 //import java.util.*;
 //
-//public class Solution_d4_5643_키순서_서울_14반_김민준 {
+//public class Solution_d3_3282_01Knapsack_서울_14반_김민준 {
 //
 //    public static void main(String[] args) throws Exception {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
