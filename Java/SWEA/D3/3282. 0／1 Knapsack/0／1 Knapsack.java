@@ -16,10 +16,10 @@ public class Solution {
             int N = Integer.parseInt(st.nextToken());
             int K = Integer.parseInt(st.nextToken());
             
-            int[] V = new int[N+1];	// 부피
-            int[] C = new int[N+1];	// 가치
+            int[] V = new int[N];	// 부피
+            int[] C = new int[N];	// 가치
             
-            for (int i = 1; i <= N; i++) {
+            for (int i = 0; i < N; i++) {
                 st = new StringTokenizer(br.readLine());
                 V[i] = Integer.parseInt(st.nextToken());
                 C[i] = Integer.parseInt(st.nextToken());    
@@ -28,7 +28,7 @@ public class Solution {
             int[] knapsack = new int[K+1];
             
             // 1차원 knapsack
-            for (int i = 1; i <= N; i++) {
+            for (int i = 0; i < N; i++) {
 				for (int k = K; k >= V[i]; k--) {
 					if (V[i] <= k) {
 						knapsack[k] = Math.max(knapsack[k], knapsack[k - V[i]] + C[i]);						
