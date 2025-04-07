@@ -27,6 +27,7 @@ public class Solution {
 
             int[] knapsack = new int[K+1];
             
+            // 1차원 knapsack
             for (int i = 1; i <= N; i++) {
 				for (int k = K; k >= V[i]; k--) {
 					if (V[i] <= k) {
@@ -44,7 +45,7 @@ public class Solution {
 }
 
 
-
+/// 2차원 knapsack
 //package a0407.homework;
 //
 //import java.io.*;
