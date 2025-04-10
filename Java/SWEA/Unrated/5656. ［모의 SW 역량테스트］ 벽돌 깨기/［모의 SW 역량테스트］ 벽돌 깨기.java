@@ -10,7 +10,7 @@ public class Solution {
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1};
 
-    // 개선된 deep copy - 각 행을 Arrays.copyOf로 복사
+    // deep copy - 각 행을 Arrays.copyOf로 복사
     static int[][] copyMap(int[][] original) {
         int[][] copied = new int[H][W];
         for (int i = 0; i < H; i++) {
@@ -20,7 +20,7 @@ public class Solution {
     }
     
     // 구슬 폭발 및 벽돌 내리기 함수
-    static int[][] pop(int r, int c, int[][] map) {
+    static int[][] blast(int r, int c, int[][] map) {
         Queue<int[]> queue = new ArrayDeque<>();
         if(map[r][c] > 1) {
             queue.offer(new int[] {r, c, map[r][c]});
@@ -103,7 +103,7 @@ public class Solution {
             if (r == -1) continue;  // 해당 열에 벽돌이 없으면 패스
             
             int[][] copiedMap = copyMap(map);
-            copiedMap = pop(r, j, copiedMap);
+            copiedMap = blast(r, j, copiedMap);
             permWithRep(cnt + 1, copiedMap);
         }
     }
